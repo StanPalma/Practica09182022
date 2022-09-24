@@ -1,0 +1,79 @@
+<div class="container border separacion">
+
+  <h1>
+    Conversor de Divisas
+  </h1>
+
+  <div class="row separacion">
+    <div class="col-sm-6">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Dolar</h5>
+          <div class="form-group">
+            <!-- <label for="dolar">Dolar</label> -->
+            <input type="text" class="form-control " id="dolar" aria-describedby="dolarHelp" placeholder="$"
+              [(ngModel)]="dolar" (keyup)="convertirDolar()">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Bitcoin</h5>
+          <div class="form-group">
+            <!-- <label for="dolar">Bitcoin</label> -->
+            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="dolarHelp" placeholder="฿"
+              [(ngModel)]="bitcoin" (keyup)="convertirBitcoin()">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- <button class="btn" (click)="convertir()">Convertir</button> -->
+
+</div>
+
+<div class="container border separacion">
+
+  <h1>
+    Clima
+  </h1>
+
+  <div class="row separacion">
+    <div class="col-sm-6">
+      <div class="card">
+        <div class="card-body">
+          <!-- <h5 class="card-title">Dolar</h5> -->
+          <div class="form-group">
+            <!-- <label for="dolar">Dolar</label> -->
+            <input type="text" class="form-control " id="dolar" aria-describedby="dolarHelp" placeholder="Ingrese país"
+              [(ngModel)]="ciudad">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <div class="card">
+        <div class="card-body">
+          <!-- <h5 class="card-title">Dolar</h5> -->
+          <div class="form-group">
+            <!-- <label for="dolar">Dolar</label> -->
+            <input type="text" class="form-control " id="dolar" aria-describedby="dolarHelp" placeholder="Temperatura"
+              [(ngModel)]="clima" disabled="">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<button (click)="setClima()">Clima</button>
+  <div class="row">
+    
+  </div>
+
+  <!-- <button class="btn" (click)="convertir()">Convertir</button> -->
+
+</div>
