@@ -15,9 +15,6 @@ export class ServicioClima {
     /* let result = this.http.get(this.baseUrl);
     console.log(result); */
     // return this.http.get(this.baseUrl + position + "?app_id=392fd6be&app_key=93a8f3d21539eda6a180de46b4804b9d");
-    return this.http.get(`${this.baseUrl}` + ciudad + `&aqi=no`).pipe(map(data => {
-      if (data === null) return throwError("null data");
-      else return data;
-    }));
+    return this.http.get(`${this.baseUrl}` + ciudad + `&aqi=no`);
   }
 }

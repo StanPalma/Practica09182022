@@ -49,7 +49,6 @@ export class AppComponent {
     console.log(this.ciudad);
     this.servicioClima.getClima(this.ciudad).subscribe(
       (resp) => {
-        console.error;
         this.respuesta = JSON.stringify(resp.current.temp_c); // obtiene respuesta en string
         // console.log('Respuesta: ' + this.respuesta);
         this.temp = this.respuesta + '°C'; // se muestra en pantalla

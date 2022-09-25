@@ -13,11 +13,6 @@ export class ServicioConvertService {
   getValue() {
     /* let result = this.http.get(this.baseUrl);
     console.log(result); */
-    return this.http.get(this.baseUrl).pipe(
-      map((data) => {
-        if (data === null) return throwError('null data');
-        else return data;
-      })
-    );
+    return this.http.get(this.baseUrl);
   }
 }
