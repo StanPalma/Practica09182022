@@ -5,7 +5,7 @@ import { ServicioConvertService } from './servicio-convert.service';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
   // Bitcoin
@@ -17,11 +17,12 @@ export class AppComponent {
 
   // Clima
   ciudad: any;
-  clima: any;
+  temp: string = '';
 
-  constructor(public convert: ServicioConvertService, public servicioClima: ServicioClima) {
-
-  }
+  constructor(
+    public convert: ServicioConvertService,
+    public servicioClima: ServicioClima
+  ) {}
 
   convertirBitcoin() {
     this.convert.getValue().subscribe((resp) => {
@@ -42,21 +43,20 @@ export class AppComponent {
     });
   }
 
-  iniciarMapa() {
-    var latitud = 19.3886;
-    var longitud = -99.1740;
-
-    /* coordenadas = {
-      
-    } */
-  }
-
-  respuesta: string = "";
+  respuesta: any;
   setClima() {
     console.log(this.ciudad);
-    this.servicioClima.getLocation(this.ciudad).subscribe((resp) => {
-      this.respuesta = JSON.stringify(resp);
-      console.log(this.respuesta);
-    });
+    this.servicioClima.getClima(this.ciudad).subscribe(
+      (resp) => {
+        this.respuesta = JSON.stringify(resp.current.temp_c);
+        console.log('Respuesta: ' + this.respuesta);
+        this.temp = this.respuesta + '°C';
+      },
+      (err) => {
+        if (err.status == 400) {
+          alert("Pais no existe");
+        }
+      }
+    );
   }
 }
