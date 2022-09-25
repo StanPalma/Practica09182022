@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { ServicioClima } from './servicio-clima.service';
-import { ServicioConvertService } from './servicio-convert.service';
+import { ServicioClima } from './services/servicio-clima.service';
+import { ServicioConvertService } from './services/servicio-convert.service';
 
 @Component({
   selector: 'app-root',

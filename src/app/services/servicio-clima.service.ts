@@ -7,8 +7,6 @@ import { map, Observable, throwError } from 'rxjs';
 })
 export class ServicioClima {
 
-  // baseUrl = 'http://api.weatherunlocked.com/api/current/';
-  // baseUrl = 'http://api.weatherapi.com/v1/current.json?key=dfca66bbcac244cdbfc235416222409&q=el salvador&aqi=no';
   baseUrl = 'http://api.weatherapi.com/v1/current.json?key=dfca66bbcac244cdbfc235416222409&q=';
 
   constructor(private http: HttpClient) { }
