@@ -43,18 +43,21 @@ export class AppComponent {
     });
   }
 
-  respuesta: any;
-  setClima() {
+  // NOTE: Obtiene clima
+  respuesta: string = "";
+  getClima() {
     console.log(this.ciudad);
     this.servicioClima.getClima(this.ciudad).subscribe(
       (resp) => {
-        this.respuesta = JSON.stringify(resp.current.temp_c);
+        this.respuesta = JSON.stringify(resp.current.temp_c); // obtiene respuesta en string
         console.log('Respuesta: ' + this.respuesta);
-        this.temp = this.respuesta + '°C';
+        this.temp = this.respuesta + '°C'; // se muestra en pantalla
       },
       (err) => {
         if (err.status == 400) {
           alert("Pais no existe");
+          this.temp = "";
+          this.ciudad = "";
         }
       }
     );
